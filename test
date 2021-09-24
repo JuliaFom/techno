@@ -1,0 +1,39 @@
+import pytest
+
+
+def test_len_equal_two():
+    list_ = [1, 2]
+    assert len(list_) == 2
+
+
+@pytest.mark.parametrize(
+    ('number', ), [
+        (1, ), (2, ), (3, )
+    ]
+)
+def test_list_contains_number(number):
+    list_ = [1, 2, 3, 4]
+    assert number in list_
+
+
+def test_list_ie_empty():
+    list_ = []
+    try:
+        assert list_[0]
+    except IndexError:
+        pass
+
+
+def test_number_less_ten():
+    number = 6.0
+    assert number < 10
+
+
+def test_number_is_odd():
+    number = 7.0
+    assert number % 2 == 1
+
+
+def test_number_is_positive():
+    number = 0.1
+    assert number > 0
